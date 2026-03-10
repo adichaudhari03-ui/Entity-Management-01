@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<a href="/create_entity" class="btn btn-primary">Create Entity</a>
+
+<table class="table mt-3">
+
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Actions</th>
+</tr>
+
+{% for e in entities %}
+
+<tr>
+<td>{{e[0]}}</td>
+<td>{{e[1]}}</td>
+
+<td>
+
+<a href="/create_attribute/{{e[0]}}" class="btn btn-sm btn-info">
+Add Fields
+</a>
+
+<a href="/create_record/{{e[0]}}" class="btn btn-sm btn-success">
+Add Record
+</a>
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form method="POST">
+
+<label>Field Name</label>
+
+<input name="name" class="form-control">
+
+<label>Type</label>
+
+<select name="data_type" class="form-control">
+
+<option>string</option>
+<option>integer</option>
+<option>float</option>
+<option>boolean</option>
+<option>date</option>
+
+</select>
+
+<br>
+
+<button class="btn btn-primary">
+Add Field
+</button>
+
+</form>
+
+<hr>
+
+<h4>Fields</h4>
+
+<ul>
+
+{% for a in attributes %}
+
+<li>{{a[2]}} ({{a[3]}})</li>
+
+{% endfor %}
+
+</ul>
+
+{% endblock %}

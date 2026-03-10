@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form method="POST" action="/save_record">
+
+<input type="hidden" name="entity_id" value="{{entity_id}}">
+
+{% for field in fields %}
+
+<label>{{field[2]}}</label>
+
+<input name="attr_{{field[0]}}" class="form-control">
+
+<br>
+
+{% endfor %}
+
+<button class="btn btn-success">
+Save Record
+</button>
+
+</form>
+
+{% endblock %}
